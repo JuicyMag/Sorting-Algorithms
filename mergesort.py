@@ -1,16 +1,24 @@
-# This is a sample Python script.
+#To implement mergesort I will create the mergesort() and merge() function
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+test_list = ['1', '2', '5', '0', '6', '9', '3']
 
+def MergeSort(list_to_sort):
+     #Need to check to see if there are more than 1 elements to check for
+    if len(list_to_sort < 2):
+        return      
+    mid = len(list_to_sort)//2
+        #Creating the right and left list to call MergeSort() list on
+    left_list = list_to_sort[:mid]
+    right_list = list_to_sort[mid:] 
+    #Copying the original list into the two halves - this is what we'll call MergeSort() on since we are 'dividing and conquering'
+    for i in range(0,right_list):
+        left_list[i] = list_to_sort[i]
+    for i in range(mid, right_list):
+        right_list[i] = list_to_sort[i]
+    
+    #Call MergeSort() on the left and right list to break them down
+    MergeSort(left_list)
+    MergeSort(right_list)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+def Merge():
+    pass
