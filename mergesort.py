@@ -11,7 +11,7 @@ def MergeSort(list_to_sort):
     if len(list_to_sort)> 1:
 
         # mid = len(list_to_sort)//2
-            #Creating the right and left list to call MergeSort() list on
+        #Creating the right and left list to call MergeSort() list on
         left_list = list_to_sort[:len(list_to_sort)//2]
         right_list = list_to_sort[len(list_to_sort)//2:]
 
@@ -76,5 +76,5 @@ if __name__ == '__main__':
 
     # print("Sorted array is: ")
     # printList(array)
-# print(MergeSort(test_list))
+    print(MergeSort(test_list))
     print(random_generated_words(10, 1000))
