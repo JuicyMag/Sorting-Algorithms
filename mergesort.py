@@ -1,6 +1,7 @@
 #To implement mergesort I will create the mergesort() and merge() function
 
 from turtle import left
+import random
 
 
 test_list = ['1', '2', '5', '0', '6', '9', '5', '3', '11', '100',]
@@ -58,11 +59,22 @@ def printList(array):
     print()
 
     # return list_to_sort
+
+def random_generated_words(number_of_words, range_of_nums):
+    randomList = []
+    for i in range(1, number_of_words):
+        choice = random.randrange(range_of_nums)
+        randomList.append(choice)
+    return randomList
+    
+
+
 if __name__ == '__main__':
     array = [6, 5, 5, 100, -1,5,6,7,8,9,12, 10, 9, 1]
 
     MergeSort(array)
 
-    print("Sorted array is: ")
-    printList(array)
-print(MergeSort(test_list))
+    # print("Sorted array is: ")
+    # printList(array)
+# print(MergeSort(test_list))
+    print(random_generated_words(10, 1000))
