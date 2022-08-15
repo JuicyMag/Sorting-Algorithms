@@ -53,7 +53,7 @@ def Merge(list_to_sort, left_list, right_list):
 
 def generate_rand_list(NumberOfValues):
     #picks random number from 0-100000 for the amount of values numberofvalues is equal to
-    x = [randint(0, 100000) for p in range(0, NumberOfValues)]
+    x = [randint(0, 100000) for p in rang(0, NumberOfValues)]
     return x
 
 if __name__ == '__main__':
