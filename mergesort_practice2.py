@@ -1,5 +1,6 @@
+from ast import Num
 from turtle import left, right
-
+from random import *
 
 def MergeSort(list_to_sort):
     if(len(list_to_sort) > 1):
@@ -50,6 +51,12 @@ def Merge(list_to_sort, left_list, right_list):
         j += 1
         k += 1
 
+def generate_rand_list(NumberOfValues):
+    #picks random number from 0-100000 for the amount of values numberofvalues is equal to
+    x = [randint(0, 100000) for p in range(0, NumberOfValues)]
+    return x
+
 if __name__ == '__main__':
     array = [9,8,5,7,3,2,3,0,-1,2,4, 300, -21, 34, -231, 1, -213]
-    print(MergeSort(array)) #calls function
+    words = generate_rand_list(1000)
+    print(MergeSort(words)) #calls function
