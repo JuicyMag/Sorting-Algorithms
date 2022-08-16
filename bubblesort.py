@@ -13,16 +13,6 @@ def BubbleSort(unsorted_array):
                 temp = unsorted_array[j]
                 unsorted_array[j] = unsorted_array[j+1]
                 unsorted_array[j+1] = temp
-
-
-
-
-
-
-
-
-
-
 def BubbleSortForMorePractice(ArrayToSort):
     ArrayLength = len(ArrayToSort)
 
@@ -35,11 +25,17 @@ def BubbleSortForMorePractice(ArrayToSort):
 
 
 def BubbleSortThirdPractice(ArrayToCall):
-    pass
+        Array_Length = len(ArrayToCall)
 
+        for i in range(Array_Length):
+            for j in range (0,Array_Length - i - 1):
+                if ArrayToCall[j] > ArrayToCall[j+1]:
+                    temp = ArrayToCall[j]
+                    ArrayToCall[j] = ArrayToCall[j+1]
+                    ArrayToCall[j+1] = temp
 
 if __name__ == '__main__':
     
     array = [ 1, 0, 3, 4, 4, 4, 2 ,5, 4, -1, -3, 9, 11]
-    BubbleSortForMorePractice(array)
+    BubbleSortThirdPractice(array)
     print(array)
