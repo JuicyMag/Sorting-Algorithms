@@ -51,12 +51,76 @@ def Merge(list_to_sort, left_list, right_list):
         j += 1
         k += 1
 
+
+
+
+def MergeSortPractice2(ArrayToSort):
+
+    ArrayLength = len(ArrayToSort)
+
+    mid = ArrayLength//2
+    LeftArray = ArrayToSort[:mid]
+    RightArray = ArrayToSort[mid:]
+
+    if ArrayLength > 2:
+        #time to split lists
+        for i in range(0,mid):
+            ArrayToSort[i] = LeftArray[i]
+        for i in range(mid, len(RightArray)):
+            ArrayToSort[i] = RightArray[i]
+
+        MergeSort(LeftArray)
+        MergeSort(RightArray)
+        Merge(ArrayToSort, LeftArray, RightArray)
+    return ArrayToSort
+
+def Merge(ArrayToSort, LeftHalf, RightHalf):
+    i = 0
+    j = 0
+    k = 0
+
+    #need to compare lists
+    while i < len(LeftHalf) and j < len(RightHalf):
+        if LeftHalf[i] < RightHalf[j]:
+            ArrayToSort[k] = LeftHalf[i]
+            i += 1
+        else:
+            ArrayToSort[k] = RightHalf[j]
+            j+= 1
+        k += 1
+    #need to clean up in the case the list is odd and while loop exits
+    while i < len(LeftHalf):
+        ArrayToSort[k] = LeftHalf[i]
+        i += 1
+        k +=1
+
+    while j < len(RightHalf):
+        ArrayToSort[k] = RightHalf[j]
+        j += 1
+        k += 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def generate_rand_list(NumberOfValues):
     #picks random number from 0-100000 for the amount of values numberofvalues is equal to
-    x = [randint(0, 100000) for p in rang(0, NumberOfValues)]
+    x = [randint(0, 100000) for p in range(0, NumberOfValues)]
     return x
 
 if __name__ == '__main__':
     array = [9,8,5,7,3,2,3,0,-1,2,4, 300, -21, 34, -231, 1, -213]
-    words = generate_rand_list(1000)
-    print(MergeSort(words)) #calls function
+    words = generate_rand_list(10)
+    print(MergeSortPractice2(words))
+    # print(MergeSort(words)) #calls function
